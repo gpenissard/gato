@@ -1,12 +1,5 @@
 <?php
-if (array_key_exists('mag', $_POST)) {
-    $url = str_replace('mag_form.php', 'mur.php', $_SERVER['PHP_SELF']);
-// Ajout du paramètre
-    $url .= '?msg=' . urlencode($msg);
-//    var_dump($url);
-    header('Location:' . $url);
-    exit;
-}
+set_msg();
 ?>
 <!DOCTYPE html>
 <html lang="fr">

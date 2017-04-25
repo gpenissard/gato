@@ -1,5 +1,4 @@
 <?php
-$pas_de_message = "";
 $message = "";
 
 if (isset($_POST['comments']) && !empty($_POST['comments'])) {

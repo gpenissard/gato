@@ -1,11 +1,10 @@
 <?php
 require_once ("_login.php");
-
-$page_name = "Index";
 require_once ("views/page_top.php");
-require_once ("views/login_form.php");
-if(user_is_logged()) {
-    require_once ("views/msg_form.php");
-}
+$page_name = "Index";
+?>
+
+<?php
+require_once ('views/afficher_message.php');
 require_once ("views/page_bottom.php")
 ?>

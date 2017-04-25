@@ -1,20 +1,14 @@
 <?php
-if (array_key_exists('mag', $_POST)) {
-    $url = str_replace('mag_form.php', 'mur.php', $_SERVER['PHP_SELF']);
-// Ajout du paramètre
-    $url .= '?msg=' . urlencode($msg);
-//    var_dump($url);
-    header('Location:' . $url);
-    exit;
+$pas_de_message = "";
+$message = "";
+
+if (isset($_POST['comments']) && !empty($_POST['comments'])) {
+    $message = set_msg();
 }
+
+require_once('views/page_top.php');
 ?>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="utf-8"/>
-    <title></title>
-</head>
-<body>
+
 <form method="post" action="<?= $_SERVER['PHP_SELF']?>" class="message">
 <fieldset>
     <div>
@@ -26,5 +20,4 @@ if (array_key_exists('mag', $_POST)) {
     </div>
 </fieldset>
 </form>
-</body>
-</html>
+

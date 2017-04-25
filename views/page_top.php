@@ -1,6 +1,7 @@
-<?php
 
-?>
+<?php require_once ("login_form.php");?>
+
+
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -11,11 +12,3 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 <body>
-<div id="container">
-
-   <?php if (user_is_logged()){
-    require_once ("msg_form.php");
-
-    get_msg();
-
-    }?>

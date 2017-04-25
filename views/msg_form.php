@@ -1,12 +1,14 @@
 <?php
-if (array_key_exists('mag', $_POST)) {
-    $url = str_replace('mag_form.php', 'mur.php', $_SERVER['PHP_SELF']);
-// Ajout du paramètre
-    $url .= '?msg=' . urlencode($msg);
-//    var_dump($url);
-    header('Location:' . $url);
-    exit;
+$pas_de_message = "";
+$message = "";
+
+if (!isset($_POST['comments']) && !empty($_POST['comments'])) {
+ $pas_de_message = "<p>. il nexiste pas . </p>";
+} else  {
+    $message = set_msg($id,$message);
 }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">

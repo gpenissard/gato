@@ -1,5 +1,4 @@
 <?php
-require_once ('defines_local.php');
 if ($_SERVER['HTTP_HOST'] == 'localhost') {
     require_once('defines_local.php');
 } else { //  $_SERVER['HTTP_HOST'] == "gato.projetisi.com"
@@ -38,7 +37,7 @@ function set_msg($user_id, $content) {
     $result = false;
     $today = date("Y-m-d H:i:s"); // Donne la date et l'heure dans le système
     $query_str = "INSERT INTO `msg` (`user_id`,`date_heure`,`content`) VALUES ('$user_id', '$today', '$content')";
-    var_dump($query_str);
+//    var_dump($query_str);
     if ($mysqli->query($query_str) === TRUE) {
         $result = $mysqli->insert_id;
     } else {

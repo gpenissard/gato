@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Mar 25 Avril 2017 à 13:12
+-- Généré le :  Mar 25 Avril 2017 à 14:57
 -- Version du serveur :  5.7.14
 -- Version de PHP :  5.6.25
 
@@ -34,6 +34,14 @@ CREATE TABLE `msg` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Contenu de la table `msg`
+--
+
+INSERT INTO `msg` (`id`, `user_id`, `date_heure`, `content`) VALUES
+(1, 1, '2017-04-25 11:00:00', 'Premier message'),
+(2, 4, '2017-04-25 11:00:00', 'Hey moi aussi');
+
+--
 -- Index pour les tables exportées
 --
 
@@ -51,7 +59,7 @@ ALTER TABLE `msg`
 -- AUTO_INCREMENT pour la table `msg`
 --
 ALTER TABLE `msg`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

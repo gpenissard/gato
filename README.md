@@ -20,7 +20,7 @@ Petit chat du P62-H17
 - requetes select + insert
 
 
-## mur (Ellori)
+## mur (Elorri)
 - appel select
 - afficher les messages
 - ??? refresh Javascript 
@@ -29,5 +29,22 @@ Petit chat du P62-H17
 - form
 - soummission
 - appel insert
+
+# Répertoires et fichiers
+- index.php
+- defines.php (projet)
+- (views)
+-- page_top.php
+-- page_bottom.php
+-- login_form.php
+-- msg_form.php
+- (common)
+- (db)
+-- defines.php (DB)
+-- conn.php
+- (style)
+- (script)
+- (images)
+
 
 

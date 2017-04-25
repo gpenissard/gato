@@ -1,5 +1,9 @@
 <?php
-require_once ('defines_local.php');
+if ($_SERVER['HTTP_HOST'] == 'localhost') {
+    require_once ('defines_local.php');
+} else { //  $_SERVER['HTTP_HOST'] == "gato.projetisi.com"
+    require_once ('defines_sentora.php');
+}
 
 $mysqli = new mysqli(CONN_HOST, CONN_USER, CONN_PWD, DBNAME);
 if ($mysqli->connect_errno) {

@@ -1,15 +1,24 @@
-<?php 
+
+<?php
+
+$messages = get_msg();
+
+
 
 ?>
 
+
 <div id="container">
-    <?php require_once ("login_form.php");
 
 
+<ul>
+    <?php
+    foreach ($messages as $c){
+echo "<li>". $c['content']. "</li>";
+    }
 
-    if (user_is_logged()){
-        require_once ("msg_form.php");
-    }?>
+    ?>
+</ul>
 
 
 

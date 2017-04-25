@@ -18,7 +18,7 @@ if ($mysqli->connect_errno) {
  */
 function get_msg($where = '') {
     global $mysqli;
-    $query_str = "SELECT * FROM msg" . $where; // Contruction de la requète SQL
+    $query_str = "SELECT * FROM msg ORDER BY `msg`.`date_heure` DESC" . $where; // Contruction de la requète SQL
     $res = $mysqli->query($query_str); // Lancement de la requète
     $result = array(); // Créer un tableau vide pour mettre toutes les data
     if ($res && ($res->num_rows > 0)) { // la requete a marché et il y a des enregistrements
@@ -34,7 +34,6 @@ function get_msg($where = '') {
  * @param $content
  */
 function set_msg($user_id, $content) {
-
     global $mysqli;
     $result = false;
     $today = date("Y-m-d H:i:s"); // Donne la date et l'heure dans le système

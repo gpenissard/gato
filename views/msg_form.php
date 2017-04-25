@@ -3,10 +3,8 @@ $pas_de_message = "";
 $message = "";
 
 if (isset($_POST['comments']) && !empty($_POST['comments'])) {
-    $message = set_msg();
+    $message = set_msg($user_id,$msg);
 }
-
-require_once('views/page_top.php');
 ?>
 
 <form method="post" action="<?= $_SERVER['PHP_SELF']?>" class="message">

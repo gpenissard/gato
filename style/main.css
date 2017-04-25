@@ -10,9 +10,9 @@ body {
     width: 1024px;
     margin:0 auto;
     padding: 10px;
-    background: rgba(154, 153, 156, 0.37);
+
     box-shadow: 0px 0px 5px #000;
-    height:2000px;
+
 }
 
 form {
@@ -20,6 +20,7 @@ form {
     padding: 10px;
     box-shadow: 0px 0px 5px #968f8f;
     float: right;
+    background: rgba(154, 153, 156, 0.37);
 }
 
 form.message {

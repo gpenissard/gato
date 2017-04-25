@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 <?php
 ?>
+=======
+
+<?php require_once ("login_form.php");?>
+
+
+
+>>>>>>> a957201c24488baef852d70bf1dea9d430cdd0b5
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -9,11 +17,3 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 <body>
-<div id="container">
-
-   <?php if (user_is_logged()){
-    require_once ("msg_form.php");
-
-    get_msg();
-
-    }?>

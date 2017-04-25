@@ -5,6 +5,6 @@ $page_name = "Index";
 ?>
 
 <?php
-require_once ("views/login_form.php");
+require_once ('views/afficher_message.php');
 require_once ("views/page_bottom.php")
 ?>

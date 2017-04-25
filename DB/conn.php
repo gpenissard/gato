@@ -24,11 +24,28 @@ function get_msg($where = '') {
     return $result;
 }
 
+/**function pour ajouter de users dans la base de données.
+ * @param $user_id
+ * @param $content
+ */
 function set_msg($user_id, $content) {
     global $mysqli;
-    $query_str = "INSERT INTO msg ('user_id','date_heure','content') VALUES ($user_id,$content)";
-    $res = $mysqli->query($query_str); // Lancement de la requète
+    $result = false;
+    $today = date("Y-m-d H:i:s"); // Donne la date et l'heure dans le système
+    $query_str = "INSERT INTO `msg` (`user_id`,`date_heure`,`content`) VALUES ('$user_id', '$today', '$content')";
+    var_dump($query_str);
+    if ($mysqli->query($query_str) === TRUE) {
+        $result = $mysqli->insert_id;
+    } else {
+        echo "Error: " . $query_str . "<br>" . $mysqli->error;
+    }
+    return $result;
 }
 
+// Pour lire les messages
 //$msgs = get_msg();
 //var_dump($msgs);
+
+// Pour écrire un message
+//$id_msg = set_msg(1, 'hola');
+//var_dump($id_msg);

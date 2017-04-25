@@ -7,6 +7,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title><?= SITE_NAME.' - '.$page_name; ?></title>
 </head>
 <body>

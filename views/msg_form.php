@@ -15,11 +15,10 @@ if (array_key_exists('mag', $_POST)) {
     <title></title>
 </head>
 <body>
-<h1>Chat</h1>
-<form method="post" action="<?= $_SERVER['PHP_SELF']?>">
+<form method="post" action="<?= $_SERVER['PHP_SELF']?>" class="message">
 <fieldset>
     <div>
-        <label for="comments" class="text" class="input">Message:</label>
+        <label for="comments" class="text" class="input">Message :</label>
         <textarea name="comments" id="comments" rows="2" cols="60"></textarea>
     </div>
     <div id="submit">

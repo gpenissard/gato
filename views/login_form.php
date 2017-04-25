@@ -8,6 +8,6 @@
         --><input type="submit" name="login" id="submit-login" value="Se connecter" class="btn"/><!--
         --><?php } else { ?>
         <span><?= $_SESSION['name-login'] ?></span>
-        <!--        <input type="submit" value="Déconnexion" name="logout" class="btn"/>-->
+                <input type="submit" value="Déconnexion" name="logout" class="btn"/>
     <?php } ?>
 </form>

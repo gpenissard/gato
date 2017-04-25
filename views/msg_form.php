@@ -1,5 +1,14 @@
 <?php
-set_msg();
+$pas_de_message = "";
+$message = "";
+
+if (!isset($_POST['comments']) && !empty($_POST['comments'])) {
+ $pas_de_message = "<p>. il nexiste pas . </p>";
+} else  {
+    $message = set_msg($id,$message);
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">

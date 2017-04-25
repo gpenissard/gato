@@ -25,6 +25,6 @@ function get_msg($where = '') {
 
 function set_msg($user_id, $content) {
     global $mysqli;
-    $query_str = "INSERT INTO msg ('user_id','content') VALUES ($user_id,$content)";
+    $query_str = "INSERT INTO msg ('user_id','date_heure','content') VALUES ($user_id,$content)";
     $res = $mysqli->query($query_str); // Lancement de la requète
 }

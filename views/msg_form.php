@@ -2,21 +2,13 @@
 $pas_de_message = "";
 $message = "";
 
-if (!isset($_POST['comments']) && !empty($_POST['comments'])) {
- $pas_de_message = "<p>. il nexiste pas . </p>";
-} else  {
-    $message = set_msg($id,$message);
+if (isset($_POST['comments']) && !empty($_POST['comments'])) {
+    $message = set_msg();
 }
 
-
+require_once('views/page_top.php');
 ?>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="utf-8"/>
-    <title></title>
-</head>
-<body>
+
 <form method="post" action="<?= $_SERVER['PHP_SELF']?>" class="message">
 <fieldset>
     <div>
@@ -28,5 +20,4 @@ if (!isset($_POST['comments']) && !empty($_POST['comments'])) {
     </div>
 </fieldset>
 </form>
-</body>
-</html>
+

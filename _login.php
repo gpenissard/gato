@@ -5,16 +5,47 @@ if(!isset($_SESSION))
     session_start();
 }
 
-function user_authenticate($user, $pass) {
-    $users = array(
-        'Elorri' => 'elo123',
-        'Kevin' => 'kev123',
-        'Sonya' => 'son123',
-        'Carolina' => 'car123',
-        'Virginie' => 'vir123',
-        'Gilles' => 'gil123',
+function get_users(){
+    return array(
+        '1' => array(
+            'username' => 'Elorri',
+            'password' => 'elo123',
+        ),
+        '2' => array(
+            'username' => 'Kevin',
+            'password' => 'kev123',
+        ),
+        '3' => array(
+            'username' => 'Sonya',
+            'password' => 'son123',
+        ),
+        '4' => array(
+            'username' => 'Carolina',
+            'password' => 'car123',
+        ),
+        '5' => array(
+            'username' => 'Virginie',
+            'password' => 'vir123',
+        ),
+        '6' => array(
+            'username' => 'Gilles',
+            'password' => 'gil123',
+        ),
     );
-    return array_key_exists($user, $users) && ($users[$user] == $pass);
+}
+
+function user_authenticate($username, $pass) {
+    $users = get_users();
+
+    $result = false;
+    foreach($users as $id => $u){
+       if($u["username"] ==$username && $u["password"] == $pass){
+           $result = true;
+       }
+
+    }
+
+return $result;
 }
 
 /**

@@ -1,5 +1,4 @@
 <?php
-require_once('DB/conn.php');
 require_once ("common/defines.php");
 require_once ("_login.php");
 $page_name = "Index";

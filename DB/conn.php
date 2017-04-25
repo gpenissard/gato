@@ -1,4 +1,5 @@
 <?php
+require_once ('defines_local.php');
 
 $mysqli = new mysqli(CONN_HOST, CONN_USER, CONN_PWD, DBNAME);
 if ($mysqli->connect_errno) {
@@ -12,7 +13,7 @@ if ($mysqli->connect_errno) {
  */
 function get_msg($where = '') {
     global $mysqli;
-    $query_str = "SELECT * FROM gato" . $where; // Contruction de la requète SQL
+    $query_str = "SELECT * FROM msg" . $where; // Contruction de la requète SQL
     $res = $mysqli->query($query_str); // Lancement de la requète
     $result = array(); // Créer un tableau vide pour mettre toutes les data
     if ($res && ($res->num_rows > 0)) { // la requete a marché et il y a des enregistrements
@@ -28,3 +29,6 @@ function set_msg($user_id, $content) {
     $query_str = "INSERT INTO msg ('user_id','date_heure','content') VALUES ($user_id,$content)";
     $res = $mysqli->query($query_str); // Lancement de la requète
 }
+
+//$msgs = get_msg();
+//var_dump($msgs);

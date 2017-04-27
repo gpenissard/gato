@@ -7,22 +7,17 @@ $messages = get_msg();
 <div id="container">
 
     <div id="container_message">
-
-
-    <ul>
-        <?php
-        foreach ($messages as $c) {
-            $user_id_author = $c['user_id']; // id de l'auteur du msg
-            $username_author = $users[$user_id_author]['username'];
-            echo
+        <ul>
+            <?php
+            foreach ($messages as $message) {
+                echo
                 "<li>"
-                , "<p class='username'>$username_author :</p>"
-                , "<p class='message'>". $c['content'] . "</p>"
+                , "<p class='username'>" . $message['username'] . "</p>"
+                , "<p class='message'>" . $message['content'] . "</p>"
                 , "</li>";
-        }
-
-        ?>
-    </ul>
+            }
+            ?>
+        </ul>
 
 
     </div>

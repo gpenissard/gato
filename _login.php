@@ -1,6 +1,6 @@
 <?php
 
-$user_id;
+$user_id = null; $username = "";
 
 if(!isset($_SESSION))
 {
@@ -42,7 +42,7 @@ function user_authenticate($username, $pass) {
     $result = false;
     foreach($users as $id => $u){
        if($u["username"] ==$username && $u["password"] == $pass){
-           $result = true;
+           $result = $id;
        }
 
     }
@@ -50,16 +50,29 @@ function user_authenticate($username, $pass) {
 return $result;
 }
 
+
+
+
 /**
  * Indique que l'utilisateur est connecté (son username est en session et sa valeur n'est pas vide
  * @return bool
  */
 function user_is_logged() {
-    return array_key_exists('name-login', $_SESSION) && ( ! empty($_SESSION['name-login']));
+    global $user_id,  $username;
+
+    $result = array_key_exists('userid', $_SESSION);
+    if ($result){
+        $user_id = $_SESSION["userid"];
+        $username =  get_users()[$user_id]["username"];
+    }
+
+    return array_key_exists('userid', $_SESSION);
 }
 
 //var_dump($_POST);
-$username = '';
+
+//var_dump($user_id);
+
 $password = '';
 if (array_key_exists('login', $_POST)
     && array_key_exists('name-login', $_POST)
@@ -68,13 +81,14 @@ if (array_key_exists('login', $_POST)
     $password = trim($_POST['password-login']);
     if ((strlen($username) > 0)
         && (strlen($password) > 0)
-        && user_authenticate($username, $password)) { // Validation sommaire puis authentification
+        && $user_id = user_authenticate($username, $password)) { // Validation sommaire puis authentification
         // Utilisateur est authentifié
-        $_SESSION['name-login'] = $username;
+        $_SESSION['userid'] = $user_id;
+      //  var_dump($user_id);
     }
     else{
         echo "Veuillez entrer un nom d'utilisateur et un mot de passe valide !";
     }
 } else if (user_is_logged() && array_key_exists('logout', $_POST)){ // Demande de déconnexion
-    unset($_SESSION['name-login']); // Supprimer l'élément à la clef 'username' dans la session
+    unset($_SESSION['userid']); // Supprimer l'élément à la clef 'username' dans la session
 }

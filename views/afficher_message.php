@@ -1,8 +1,6 @@
-
 <?php
 
 $messages = get_msg();
-
 
 
 ?>
@@ -10,18 +8,19 @@ $messages = get_msg();
 
 <div id="container">
 
+    <div id="container_message">
 
-<ul>
-    <?php
-    foreach ($messages as $c){
-echo "<li>". $c['content']. "</li>";
-    }
+        <ul>
+            <?php
+            foreach ($messages as $c) {
+                echo "<li>" . $c['content'] . "</li>";
+            }
 
-    ?>
-</ul>
+            ?>
+        </ul>
 
 
-
+    </div>
 
 </div>
 

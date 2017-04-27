@@ -73,7 +73,7 @@ if (array_key_exists('login', $_POST)
         $_SESSION['name-login'] = $username;
     }
     else{
-        echo "Veuillez entrer un nom d'utilisateur et un mot de passe valide !";
+        ;
     }
 } else if (user_is_logged() && array_key_exists('logout', $_POST)){ // Demande de déconnexion
     unset($_SESSION['name-login']); // Supprimer l'élément à la clef 'username' dans la session

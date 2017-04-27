@@ -1,6 +1,36 @@
 <?php
 define('MAX_COUNT_MESSAGES', 25);
 
+function get_users(){
+    return array(
+        '1' => array(
+            'username' => 'Elorri',
+            'password' => 'elo123',
+        ),
+        '2' => array(
+            'username' => 'Kevin',
+            'password' => 'kev123',
+        ),
+        '3' => array(
+            'username' => 'Sonya',
+            'password' => 'son123',
+        ),
+        '4' => array(
+            'username' => 'Carolina',
+            'password' => 'car123',
+        ),
+        '5' => array(
+            'username' => 'Virginie',
+            'password' => 'vir123',
+        ),
+        '6' => array(
+            'username' => 'Gilles',
+            'password' => 'gil123',
+        ),
+    );
+}
+
+
 if ($_SERVER['HTTP_HOST'] == 'localhost') {
     require_once('defines_local.php');
 } else { //  $_SERVER['HTTP_HOST'] == "gato.projetisi.com"
@@ -23,7 +53,9 @@ function get_msg() {
     $res = $mysqli->query($query_str); // Lancement de la requète
     $result = array(); // Créer un tableau vide pour mettre toutes les data
     if ($res && ($res->num_rows > 0)) { // la requete a marché et il y a des enregistrements
+        $users = get_users();
         while ($gato_data = $res->fetch_assoc()) {
+            $gato_data['username'] = $users[$gato_data['user_id']]['username'];
             $result[$gato_data['id']] = $gato_data; // Stocker l'enregistrement dans les data
         }
     }

@@ -1,4 +1,6 @@
 <?php
+define('MAX_COUNT_MESSAGES', 25);
+
 if ($_SERVER['HTTP_HOST'] == 'localhost') {
     require_once('defines_local.php');
 } else { //  $_SERVER['HTTP_HOST'] == "gato.projetisi.com"
@@ -15,9 +17,9 @@ if ($mysqli->connect_errno) {
  * C'est function est pour afficher dans le mur.
  * @return array
  */
-function get_msg($where = '') {
+function get_msg() {
     global $mysqli;
-    $query_str = "SELECT * FROM msg ORDER BY `msg`.`date_heure` DESC" . $where; // Contruction de la requète SQL
+    $query_str = "SELECT * FROM msg ORDER BY `msg`.`date_heure` DESC LIMIT 0 ," . MAX_COUNT_MESSAGES; // Contruction de la requète SQL
     $res = $mysqli->query($query_str); // Lancement de la requète
     $result = array(); // Créer un tableau vide pour mettre toutes les data
     if ($res && ($res->num_rows > 0)) { // la requete a marché et il y a des enregistrements

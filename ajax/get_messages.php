@@ -5,7 +5,4 @@ header("Access-Control-Allow-Origin: *");
 
 require_once '../db/conn.php';
 $messages = get_msg();
-foreach ($messages as $msg) {
-
-}
-echo json_encode();
+echo json_encode($messages);

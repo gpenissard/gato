@@ -1,8 +1,8 @@
 <?php
-$msg_id = "";
 
 if (isset($_POST['comments']) && !empty($_POST['comments'])) {
-    $msg_id = set_msg($user_id,$msg);
+    $msg = $_POST['comments'];
+    set_msg($user_id,$msg);
 }
 ?>
 

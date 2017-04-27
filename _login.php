@@ -38,10 +38,9 @@ function get_users(){
 
 function user_authenticate($username, $pass) {
     $users = get_users();
-
     $result = false;
     foreach($users as $id => $u){
-       if($u["username"] ==$username && $u["password"] == $pass){
+       if($u["username"] == $username && $u["password"] == $pass){
            $result = true;
        }
 

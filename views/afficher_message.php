@@ -1,8 +1,10 @@
 
 <?php
 
+$users = get_users();
 $messages = get_msg();
-
+//var_dump($users);
+//var_dump($messages);
 
 
 ?>
@@ -14,7 +16,9 @@ $messages = get_msg();
 <ul>
     <?php
     foreach ($messages as $c){
-echo "<li>". $c['content']. "</li>";
+        $user_id_author = $c['user_id']; // id de l'auteur du msg
+        $username_author = $users[$user_id_author]['username'];
+echo "<li>" . $username_author . $c['content'] . "</li>";
     }
 
     ?>

@@ -7,34 +7,6 @@ if(!isset($_SESSION))
     session_start();
 }
 
-function get_users(){
-    return array(
-        '1' => array(
-            'username' => 'Elorri',
-            'password' => 'elo123',
-        ),
-        '2' => array(
-            'username' => 'Kevin',
-            'password' => 'kev123',
-        ),
-        '3' => array(
-            'username' => 'Sonya',
-            'password' => 'son123',
-        ),
-        '4' => array(
-            'username' => 'Carolina',
-            'password' => 'car123',
-        ),
-        '5' => array(
-            'username' => 'Virginie',
-            'password' => 'vir123',
-        ),
-        '6' => array(
-            'username' => 'Gilles',
-            'password' => 'gil123',
-        ),
-    );
-}
 
 function user_authenticate($username, $pass) {
     $users = get_users();
@@ -49,8 +21,6 @@ function user_authenticate($username, $pass) {
 
 return $result;
 }
-
-
 
 
 /**

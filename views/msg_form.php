@@ -1,8 +1,8 @@
 <?php
-$message = "";
 
 if (isset($_POST['comments']) && !empty($_POST['comments'])) {
-    $message = set_msg($user_id,$msg);
+    $msg = $_POST['comments'];
+    set_msg($user_id,$msg);
 }
 ?>
 
@@ -13,7 +13,7 @@ if (isset($_POST['comments']) && !empty($_POST['comments'])) {
         <textarea name="comments" id="comments" rows="2" cols="60"></textarea>
     </div>
     <div id="submit">
-        <input type='submit' value="Envoyer">
+        <input type='submit' value="Add message">
     </div>
 </fieldset>
 </form>

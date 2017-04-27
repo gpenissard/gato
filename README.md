@@ -3,7 +3,7 @@ Petit chat du P62-H17
 
 # Rappel des paramètres
 - FTP sur sentora (user: sbouchar_gato, mdp: gato)
-- MySQL sur sentora (user: gato, mdp:eju5e6uqu)
+- MySQL sur sentora (url: http://panel.projetisi.com/etc/apps/phpmyadmin, user: gato, mdp:eju5e6uqu)
 
 # fonctionalités principales
 - Login simple sans logout

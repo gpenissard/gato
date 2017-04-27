@@ -4,7 +4,6 @@ header("Content-type: text/javascript");
 header("Access-Control-Allow-Origin: *");
 
 require_once '../db/conn.php';
-require_once  '../db/users.php';
 $messages = get_msg();
 foreach ($messages as $msg) {
 
